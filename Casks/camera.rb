@@ -7,7 +7,7 @@ cask "camera" do
   desc "Camera for the Mac, wearing the iPhone's interface"
   homepage "https://github.com/yusufdiallo1/camera-releases"
 
-  depends_on macos: ">= :sonoma"
+  depends_on macos: :sonoma
   depends_on arch: :arm64
 
   app "Camera.app"
