@@ -1,6 +1,6 @@
 cask "camera" do
-  version "1.3"
-  sha256 "ba4833d9a13b887b50fc70962bd7ed263780809d2b57a39536c7e38766e8c881"
+  version "1.4"
+  sha256 "64f7538ab604b6b3964bfca9158b81f70d66236429d87cfe9dd2f7e423536193"
 
   url "https://github.com/yusufdiallo1/camera-releases/releases/download/v#{version}/Camera-#{version}.dmg"
   name "Camera"
