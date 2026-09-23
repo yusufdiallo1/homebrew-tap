@@ -2,10 +2,10 @@ cask "noctura" do
   version "1.6"
   sha256 "1467a5696ed811d9bf85326d6a3372e75ec79fe3fd1ced78484eb8624815befc"
 
-  url "https://github.com/yusufdiallo1/noctura-releases/releases/download/v#{version}/Noctura-#{version}.dmg"
+  url "https://github.com/yusufdiallo1/noctura/releases/download/v#{version}/Noctura-#{version}.dmg"
   name "Noctura"
   desc "Camera for the Mac, wearing the iPhone's interface"
-  homepage "https://github.com/yusufdiallo1/noctura-releases"
+  homepage "https://github.com/yusufdiallo1/noctura"
 
   depends_on macos: :sonoma
   depends_on arch: :arm64
