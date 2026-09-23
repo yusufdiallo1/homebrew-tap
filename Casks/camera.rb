@@ -12,9 +12,20 @@ cask "camera" do
 
   app "Camera.app"
 
-  # The app is not notarized, so macOS would otherwise refuse to open it.
-  # Homebrew removes the quarantine flag itself on install, which is why
-  # 'brew install' sidesteps the right-click dance entirely.
+  # Homebrew quarantines what it downloads, and because this app is not
+  # notarized Gatekeeper then refuses to launch it — silently, with no dialog
+  # and nothing in the log. Clearing the flag here is what makes the installed
+  # app open on the first try rather than appearing to do nothing.
+  #
+  # `must_succeed: false` because a missing flag makes xattr exit non-zero,
+  # and that is not a reason to fail an otherwise good install.
+  postflight_steps do
+    run "/usr/bin/xattr",
+        args: ["-dr", "com.apple.quarantine", "{{appdir}}/Camera.app"],
+        writable_paths: ["Camera.app"], writable_base: :appdir,
+        must_succeed: false
+  end
+
   zap trash: [
     "~/Library/Containers/com.yusufdiallo.camera",
     "~/Library/Application Support/Camera",

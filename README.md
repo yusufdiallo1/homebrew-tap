@@ -11,8 +11,8 @@ screen recording, photo and video editing, and it saves straight to Photos.
 
 **[Repository and documentation →](https://github.com/yusufdiallo1/camera-releases)**
 
-Installing through Homebrew clears the quarantine flag for you, so the app
-opens without the usual right-click dance that an un-notarized app needs.
+The cask clears the quarantine flag as part of installing, so the app opens
+without the right-click dance an un-notarized app would otherwise need.
 
 ## Uninstalling
 
