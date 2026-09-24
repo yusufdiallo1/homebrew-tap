@@ -1,6 +1,6 @@
 cask "noc" do
-  version "1.13"
-  sha256 "68b2129e70e066c15c607f9ccef51757fd24b7845e0e3bd05b555eb05759cf3c"
+  version "1.14"
+  sha256 "e1ac15db1633698337dc69bb87a8a4ef2956b6e9a278e695f9b5a225847ba8a8"
 
   url "https://github.com/yusufdiallo1/noctura/releases/download/v#{version}/Noctura-#{version}.dmg"
   name "Noctura"
