@@ -1,16 +1,16 @@
-cask "noc" do
-  version "1.17"
-  sha256 "b1a7936ab8040bd9c899b193f0ee88e8037c7da07aa51c418d57e834b5c52996"
+cask "aperture" do
+  version "1.18"
+  sha256 "7a1b339aef8b6e106e843bf95f9927517ad58a3594d2ea06e68beaa41675d4c4"
 
-  url "https://github.com/yusufdiallo1/noctura/releases/download/v#{version}/Noctura-#{version}.dmg"
-  name "Noctura"
+  url "https://github.com/yusufdiallo1/aperture/releases/download/v#{version}/Aperture-#{version}.dmg"
+  name "Aperture"
   desc "Camera for the Mac, wearing the iPhone's interface"
-  homepage "https://github.com/yusufdiallo1/noctura"
+  homepage "https://github.com/yusufdiallo1/aperture"
 
   depends_on macos: :sonoma
   depends_on arch: :arm64
 
-  app "Noctura.app"
+  app "Aperture.app"
 
   # Homebrew quarantines what it downloads, and because this app is not
   # notarized Gatekeeper then refuses to launch it — silently, with no dialog
@@ -21,18 +21,18 @@ cask "noc" do
   # and that is not a reason to fail an otherwise good install.
   postflight_steps do
     run "/usr/bin/xattr",
-        args: ["-dr", "com.apple.quarantine", "{{appdir}}/Noctura.app"],
-        writable_paths: ["Noctura.app"], writable_base: :appdir,
+        args: ["-dr", "com.apple.quarantine", "{{appdir}}/Aperture.app"],
+        writable_paths: ["Aperture.app"], writable_base: :appdir,
         must_succeed: false
   end
 
   zap trash: [
-    "~/Library/Containers/com.yusufdiallo.noctura",
-    "~/Library/Application Support/Noctura",
+    "~/Library/Containers/com.yusufdiallo.aperture",
+    "~/Library/Application Support/Aperture",
   ]
 
   caveats <<~CAVEAT
-    Noctura needs a few permissions, each asked for when it is first used:
+    Aperture needs a few permissions, each asked for when it is first used:
 
       Camera and Microphone  capture
       Photos                 saving, add-only — it never reads your library
