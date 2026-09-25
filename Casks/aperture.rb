@@ -1,6 +1,6 @@
 cask "aperture" do
-  version "1.23"
-  sha256 "65f7924db8c92e449475488e3f07e1ca5766c951aa2932c35559412e2dee9270"
+  version "1.24"
+  sha256 "1ee6afb479304a7d50a2ad6d45e72e4ce678a5b1b42c1e15dbe0c95a8316cd40"
 
   url "https://github.com/yusufdiallo1/aperture/releases/download/v#{version}/Aperture-#{version}.dmg"
   name "Aperture"
