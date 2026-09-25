@@ -1,4 +1,4 @@
-cask "noc" do
+cask "ap" do
   version "1.34"
   sha256 "2b05d748dee4ac5b65be23d95a5c37fee25c7d931b89e36a47cc54ecba5233e5"
 
