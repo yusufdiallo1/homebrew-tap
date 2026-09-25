@@ -1,6 +1,6 @@
 cask "noc" do
-  version "1.22"
-  sha256 "ccfe792b27211c76171832f021be10c7b7724036a03c7da16128c099af855170"
+  version "1.23"
+  sha256 "65f7924db8c92e449475488e3f07e1ca5766c951aa2932c35559412e2dee9270"
 
   url "https://github.com/yusufdiallo1/aperture/releases/download/v#{version}/Aperture-#{version}.dmg"
   name "Aperture"
@@ -35,7 +35,7 @@ cask "noc" do
     Aperture needs a few permissions, each asked for when it is first used:
 
       Camera and Microphone  capture
-      Photos                 saving, add-only — it never reads your library
+      Photos                 saving; full access only if you delete from the app
       Screen Recording       only for the Screen tab
 
     Screen Recording is read once at launch, so quit and reopen the app after
