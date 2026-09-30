@@ -1,9 +1,9 @@
 cask "ap" do
-  version "1.60"
-  sha256 "29f071eab85136a2d975e64804bf1ce937f48e982404bb3862c716c8e5fce4e4"
+  version "1.61"
+  sha256 "57ac44816d7345f12e47b41949688204b1c4c0f73ce69349bdc490f95af711a2"
 
-  url "https://github.com/yusufdiallo1/aperture/releases/download/v#{version}/Aperture-#{version}.dmg"
-  name "Aperture"
+  url "https://github.com/yusufdiallo1/aperture/releases/download/v#{version}/Cappture-#{version}.dmg"
+  name "Cappture"
   desc "Camera for the Mac, wearing the iPhone's interface"
   homepage "https://github.com/yusufdiallo1/aperture"
 
