@@ -1,4 +1,4 @@
-cask "aperture" do
+cask "cappture" do
   version "1.63"
   sha256 "3fd56a0879b4a5c689fea4be0e0f39d915ccf6d8c808601e3f93a4bf5e8b2abf"
 
@@ -7,20 +7,22 @@ cask "aperture" do
   desc "Camera for the Mac, wearing the iPhone's interface"
   homepage "https://github.com/yusufdiallo1/aperture"
 
-  # The app is called Cappture. This name is kept so that anyone who ran
-  # `brew install aperture` before the rename still gets updates rather
-  # than silently stopping at the last version under the old name.
-  #
-  # It installs the same app from the same image; only the token differs.
   depends_on macos: :sonoma
   depends_on arch: :arm64
 
   app "Cappture.app"
 
+  # Homebrew quarantines what it downloads, and because this app is not
+  # notarized Gatekeeper then refuses to launch it — silently, with no dialog
+  # and nothing in the log. Clearing the flag here is what makes the installed
+  # app open on the first try rather than appearing to do nothing.
+  #
+  # `must_succeed: false` because a missing flag makes xattr exit non-zero,
+  # and that is not a reason to fail an otherwise good install.
   postflight_steps do
     run "/usr/bin/xattr",
-        args: ["-dr", "com.apple.quarantine", "{{appdir}}/Cappture.app"],
-        writable_paths: ["Cappture.app"], writable_base: :appdir,
+        args: ["-dr", "com.apple.quarantine", "{{appdir}}/Aperture.app"],
+        writable_paths: ["Aperture.app"], writable_base: :appdir,
         must_succeed: false
   end
 
@@ -30,7 +32,7 @@ cask "aperture" do
   ]
 
   caveats <<~CAVEAT
-    Cappture needs a few permissions, each asked for when it is first used:
+    Aperture needs a few permissions, each asked for when it is first used:
 
       Camera and Microphone  capture
       Photos                 saving; full access only if you delete from the app
