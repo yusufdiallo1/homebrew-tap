@@ -1,6 +1,6 @@
 cask "ap" do
-  version "1.68"
-  sha256 "05b289245d27dc2d773b48eff96d10767e9ad05a40b949fbd0f6d075f18a32fa"
+  version "1.69"
+  sha256 "73356be41b9744ac3de8ac83409a2932052929cd361b059220f010cbd41e9861"
 
   url "https://github.com/yusufdiallo1/cappture/releases/download/v#{version}/Cappture-#{version}.dmg"
   name "Cappture"
@@ -23,6 +23,25 @@ cask "ap" do
     run "/usr/bin/xattr",
         args: ["-dr", "com.apple.quarantine", "{{appdir}}/Cappture.app"],
         writable_paths: ["Cappture.app"], writable_base: :appdir,
+        must_succeed: false
+
+    # Reopen it, if it was open.
+    #
+    # brew replaces the files and leaves whatever was running alone, so
+    # after an upgrade the old process carries on with its own bundle
+    # gone — it offers updates it already has and behaves like the
+    # version it no longer is. Quitting and reopening puts the app that
+    # was just installed on screen.
+    #
+    # Only when it was already running: nobody wants an installer to
+    # open an app they were not using.
+    run "/bin/sh",
+        args: ["-c",
+               "if pgrep -x Cappture >/dev/null 2>&1; then " \
+               "osascript -e 'quit app \"Cappture\"' >/dev/null 2>&1; " \
+               "for i in 1 2 3 4 5 6 7 8 9 10; do " \
+               "pgrep -x Cappture >/dev/null 2>&1 || break; sleep 0.5; done; " \
+               "open -a '{{appdir}}/Cappture.app' >/dev/null 2>&1; fi"],
         must_succeed: false
   end
 
