@@ -21,8 +21,8 @@ cask "cappture" do
   # and that is not a reason to fail an otherwise good install.
   postflight_steps do
     run "/usr/bin/xattr",
-        args: ["-dr", "com.apple.quarantine", "{{appdir}}/Aperture.app"],
-        writable_paths: ["Aperture.app"], writable_base: :appdir,
+        args: ["-dr", "com.apple.quarantine", "{{appdir}}/Cappture.app"],
+        writable_paths: ["Cappture.app"], writable_base: :appdir,
         must_succeed: false
   end
 
@@ -32,7 +32,7 @@ cask "cappture" do
   ]
 
   caveats <<~CAVEAT
-    Aperture needs a few permissions, each asked for when it is first used:
+    Cappture needs a few permissions, each asked for when it is first used:
 
       Camera and Microphone  capture
       Photos                 saving; full access only if you delete from the app
