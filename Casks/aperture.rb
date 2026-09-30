@@ -1,6 +1,6 @@
 cask "aperture" do
-  version "1.61"
-  sha256 "57ac44816d7345f12e47b41949688204b1c4c0f73ce69349bdc490f95af711a2"
+  version "1.62"
+  sha256 "8474490f0ec3f50a5c1d2f4d26ffc578bb09e2d02a459e6c6cbe08a178f0aff7"
 
   url "https://github.com/yusufdiallo1/aperture/releases/download/v#{version}/Cappture-#{version}.dmg"
   name "Cappture"
@@ -10,7 +10,7 @@ cask "aperture" do
   depends_on macos: :sonoma
   depends_on arch: :arm64
 
-  app "Aperture.app"
+  app "Cappture.app"
 
   # Homebrew quarantines what it downloads, and because this app is not
   # notarized Gatekeeper then refuses to launch it — silently, with no dialog
