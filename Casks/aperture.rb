@@ -1,6 +1,6 @@
 cask "aperture" do
-  version "1.70"
-  sha256 "00ed8d7f64641b05d3883fd32458b005b08b66dbf8ab1fe6022725c01803e70d"
+  version "1.71"
+  sha256 "18512f3508b61d932cafa74e72be7f885357265bd4c19f674928a36859ae1fa1"
 
   url "https://github.com/yusufdiallo1/cappture/releases/download/v#{version}/Cappture-#{version}.dmg"
   name "Cappture"
