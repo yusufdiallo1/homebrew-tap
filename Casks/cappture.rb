@@ -2,10 +2,10 @@ cask "cappture" do
   version "1.63"
   sha256 "3fd56a0879b4a5c689fea4be0e0f39d915ccf6d8c808601e3f93a4bf5e8b2abf"
 
-  url "https://github.com/yusufdiallo1/aperture/releases/download/v#{version}/Cappture-#{version}.dmg"
+  url "https://github.com/yusufdiallo1/cappture/releases/download/v#{version}/Cappture-#{version}.dmg"
   name "Cappture"
   desc "Camera for the Mac, wearing the iPhone's interface"
-  homepage "https://github.com/yusufdiallo1/aperture"
+  homepage "https://github.com/yusufdiallo1/cappture"
 
   depends_on macos: :sonoma
   depends_on arch: :arm64
