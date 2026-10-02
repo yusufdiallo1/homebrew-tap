@@ -1,24 +1,45 @@
 # Homebrew tap
 
 ```bash
-brew install --cask yusufdiallo1/tap/camera
+brew tap yusufdiallo1/tap
+brew install cappture
 ```
 
-## Camera
+The first line is needed once. After it, `brew install cappture` and
+`brew upgrade cappture` work on their own.
 
-A camera for the Mac, wearing the iPhone's interface. Six capture modes,
-screen recording, photo and video editing, and it saves straight to Photos.
+## Cappture
 
-**[Repository and documentation →](https://github.com/yusufdiallo1/noctura)**
+A camera for the Mac wearing the iPhone's interface, with screenshots,
+screen recording, and editing. It saves to its own library and, if you
+ask it to, to Photos.
 
-The cask clears the quarantine flag as part of installing, so the app opens
-without the right-click dance an un-notarized app would otherwise need.
+**[Repository and releases →](https://github.com/yusufdiallo1/cappture)**
+
+The cask clears the quarantine flag as it installs, so the app opens
+without the right-click dance an unnotarized app would otherwise need.
+
+## Updating
+
+```bash
+brew upgrade cappture
+```
+
+The app also updates itself: it checks hourly and offers the new version
+when one appears.
 
 ## Uninstalling
 
 ```bash
-brew uninstall --cask noctura          # removes the app
-brew uninstall --zap --cask noctura    # also removes settings and cached captures
+brew uninstall --cask cappture
 ```
 
-Captures already saved to your Photos library stay there either way.
+Your captures are not touched — they live in your captures folder, not in
+the app.
+
+## Why a tap and not `brew install cappture` on its own
+
+A bare name resolves only for casks in homebrew/cask, Homebrew's own
+repository. Getting in needs a pull request there and clearing a
+notability bar that a new, unnotarized app does not. A tap is the
+ordinary way to ship outside it.
