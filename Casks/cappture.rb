@@ -1,6 +1,6 @@
 cask "cappture" do
-  version "2.31"
-  sha256 "703e940253a37b4abed6e8f16d96c7add135e0e2b4daa63f1ae0e25a207244a6"
+  version "2.35"
+  sha256 "6df0ab07865ac5d841c6f21e580e6e7500930bf2f3b933cf0a13e1533635cb6c"
 
   url "https://github.com/yusufdiallo1/cappture/releases/download/v#{version}/Cappture-#{version}.dmg"
   name "Cappture"
@@ -59,4 +59,5 @@ cask "cappture" do
     granting it.
   CAVEAT
 end
+
 
