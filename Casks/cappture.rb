@@ -1,6 +1,6 @@
 cask "cappture" do
-  version "2.04"
-  sha256 "d84acb5f4f4af7f5394e4059e4a80e6a643fc06e08bc686a775314fde4811a30"
+  version "2.30"
+  sha256 "7df0ffa91ba1830c1275e9abf2c63c7787779f893321331ced63db816f8ba119"
 
   url "https://github.com/yusufdiallo1/cappture/releases/download/v#{version}/Cappture-#{version}.dmg"
   name "Cappture"
@@ -12,10 +12,8 @@ cask "cappture" do
 
   app "Cappture.app"
 
-  # Homebrew quarantines what it downloads, and because this app is not
-  # notarized Gatekeeper then refuses to launch it — silently, with no dialog
-  # and nothing in the log. Clearing the flag here is what makes the installed
-  # app open on the first try rather than appearing to do nothing.
+  # The app is notarized now, so Gatekeeper accepts it; the flag is still
+  # cleared so a first launch never waits on an online check.
   #
   # `must_succeed: false` because a missing flag makes xattr exit non-zero,
   # and that is not a reason to fail an otherwise good install.
