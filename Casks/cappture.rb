@@ -1,6 +1,6 @@
 cask "cappture" do
-  version "3.48"
-  sha256 "a2a300bf2b4db6897b87eff5b5ca93dd1e34294ec4f31d2569f7a9c3cb33cd5e"
+  version "3.49"
+  sha256 "05d0a46a807896fe112d93d3816a328ed70b3f6f39092850cbc311396a5da6a2"
 
   url "https://github.com/yusufdiallo1/cappture/releases/download/v#{version}/Cappture-#{version}.dmg"
   name "Cappture"
